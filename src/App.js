@@ -8,7 +8,7 @@ function App() {
       <h1>To do</h1>
       <Form />
     </div>
-  );
+  )
 }
 
 export default App;

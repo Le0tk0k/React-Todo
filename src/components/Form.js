@@ -17,6 +17,6 @@ const Form = () => {
       <Button />
     </div>
   )
-};
+}
 
 export default Form;
