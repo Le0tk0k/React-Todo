@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import ListItem from "./ListItem";
 import Form from "./Form";
 
@@ -10,6 +10,12 @@ const radioStyle = {
 const menu = ['all', 'working', 'done']
 
 const List = () => {
+    const [items, setItems] = useState([
+        { id: 1, text: 'list 1', done: false },
+        { id: 2, text: 'list 2', done: false },
+        { id: 3, text: 'list 3', done: false },
+    ])
+
     return (
         <div>
             <Form />
@@ -20,7 +26,7 @@ const List = () => {
                 </label>
                 ))
             }
-            <ListItem />
+            <ListItem items={items} />
         </div>
     )
 }

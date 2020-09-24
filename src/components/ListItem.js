@@ -1,8 +1,14 @@
 import React from 'react';
 
-const ListItem = () => {
+const ListItem = (props) => {
     return (
         <div>
+            {
+                props.items.map((item) => (
+                    <p>{item.text}</p>
+                ))
+            }
+            <p>{props.items.length} items</p>
         </div>
     )
 }
