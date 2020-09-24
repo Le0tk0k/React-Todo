@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import List from './components/List';
+import Todo from './components/Todo';
 
 function App() {
   return (
     <div className="App">
       <h1>To do</h1>
-      <List />
+      <Todo />
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ListItem = (props) => {
+const TodoItem = (props) => {
     return (
         <div>
             {
@@ -13,4 +13,4 @@ const ListItem = (props) => {
     )
 }
 
-export default ListItem;
+export default TodoItem;
