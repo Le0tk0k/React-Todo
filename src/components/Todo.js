@@ -16,6 +16,8 @@ const Todo = () => {
         { id: 3, text: 'list 3', done: false },
     ]);
 
+    const [filter, setFilter] = useState('all');
+
     const handleCheck = (checked) => {
         const newItems = items.map((item) => {
             if(item.id === checked.id) {
@@ -36,12 +38,19 @@ const Todo = () => {
             {
                 menu.map((item) => (
                 <label key={item} style={radioStyle}>
-                    <input type="radio" value={item} />{item}
+                    <input
+                        type="radio"
+                        value={item}
+                        onChange={() => setFilter(item)}
+                        checked={item === filter}
+                    />
+                    {item}
                 </label>
                 ))
             }
             {
-                items.map((item) => (
+                items.filter((item) => (filter === 'all' || (filter === 'working' && !item.done) || (filter === 'done' && item.done)))
+                    .map((item) => (
                     <TodoItem
                         key={item.id}
                         item={item}
