@@ -16,6 +16,16 @@ const Todo = () => {
         { id: 3, text: 'list 3', done: false },
     ]);
 
+    const handleCheck = (checked) => {
+        const newItems = items.map((item) => {
+            if(item.id === checked.id) {
+                item.done = !item.done;
+            }
+            return item
+        });
+        setItems(newItems);
+    }
+
     return (
         <div>
             <Form />
@@ -28,7 +38,11 @@ const Todo = () => {
             }
             {
                 items.map((item) => (
-                    <TodoItem key={item.id} item={item} />
+                    <TodoItem
+                        key={item.id}
+                        item={item}
+                        onCheck={handleCheck}
+                    />
                 ))
             }
         </div>
