@@ -14,7 +14,7 @@ const Todo = () => {
         { id: 1, text: 'list 1', done: false },
         { id: 2, text: 'list 2', done: false },
         { id: 3, text: 'list 3', done: false },
-    ])
+    ]);
 
     return (
         <div>
@@ -26,7 +26,11 @@ const Todo = () => {
                 </label>
                 ))
             }
-            <TodoItem items={items} />
+            {
+                items.map((item) => (
+                    <TodoItem key={item.id} item={item} />
+                ))
+            }
         </div>
     )
 }
