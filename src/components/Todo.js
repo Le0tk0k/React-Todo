@@ -26,9 +26,13 @@ const Todo = () => {
         setItems(newItems);
     }
 
+    const handleAdd = (text) => {
+        setItems([...items, { key: 5, text: text, done: false }]);
+    }
+
     return (
         <div>
-            <Form />
+            <Form onAdd={handleAdd} />
             {
                 menu.map((item) => (
                 <label key={item} style={radioStyle}>

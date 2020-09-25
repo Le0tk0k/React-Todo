@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const inputStyle = {
   "width": "380px",
@@ -9,10 +9,28 @@ const inputStyle = {
   "marginRight" :"12px"
 }
 
-const Form = () => {
+const Form = (props) => {
+  const [text, setText] = useState('');
+
+  const handleChange = (e) => setText(e.target.value);
+
+  const handleKeyDone = (e) => {
+    if (e.keyCode === 13) {
+      props.onAdd(text);
+      setText('');
+    }
+  };
+
   return (
     <div>
-      <input style={inputStyle} />
+      <input
+          type="text"
+          style={inputStyle}
+          placeholder="Enter to add new todo"
+          value={text}
+          onChange={handleChange}
+          onKeyDown={handleKeyDone}
+      />
     </div>
   )
 }
