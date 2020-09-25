@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '../shared/Button';
 
 const inputStyle = {
   "width": "380px",
@@ -14,7 +13,6 @@ const Form = () => {
   return (
     <div>
       <input style={inputStyle} />
-      <Button />
     </div>
   )
 }
