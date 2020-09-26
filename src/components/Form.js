@@ -15,7 +15,7 @@ const Form = (props) => {
   const handleChange = (e) => setText(e.target.value);
 
   const handleKeyDone = (e) => {
-    if (e.keyCode === 13) {
+    if (e.keyCode === 13 && text !== '') {
       props.onAdd(text);
       setText('');
     }
