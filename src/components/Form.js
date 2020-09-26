@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 const inputStyle = {
   "width": "380px",
   "fontSize": "18px",
-  "padding": "6px 2px",
+  "padding": "6px",
   "borderWidth": "0",
   "borderRadius": "6px",
   "marginRight" :"12px"
@@ -26,7 +26,7 @@ const Form = (props) => {
       <input
           type="text"
           style={inputStyle}
-          placeholder="Enter to add new todo"
+          placeholder="Enter to add"
           value={text}
           onChange={handleChange}
           onKeyDown={handleKeyDone}
