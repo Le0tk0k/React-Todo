@@ -1,4 +1,18 @@
 .filter {
+    display: inline-block;
     font-size: 18px;
     margin: 10px;
+    cursor: pointer;
+}
+
+.filter:hover {
+    opacity: .8;
+}
+
+.filter input {
+    display: none;
+}
+
+input[type="radio"]:checked + div {
+    border-bottom: 2px solid #494949;
 }

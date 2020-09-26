@@ -46,7 +46,7 @@ const Todo = () => {
                                 onChange={() => setFilter(item)}
                                 checked={item === filter}
                             />
-                            {item}
+                            <div>{item}</div>
                         </label>
                     ))
                 }
