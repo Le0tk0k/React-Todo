@@ -1,5 +1,5 @@
 import React from 'react';
-import './todoitem.css';
+import './style/todoitem.css';
 
 const TodoItem = (props) => {
     const handleChange = () => {
@@ -7,7 +7,6 @@ const TodoItem = (props) => {
     };
 
     return (
-        <div>
             <label className={props.item.done ? 'done' : ''}>
                 <input
                     type="checkbox"
@@ -16,7 +15,6 @@ const TodoItem = (props) => {
                 />
                 {props.item.text}
             </label>
-        </div>
     )
 }
 

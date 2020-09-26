@@ -7,14 +7,19 @@ const radioStyle = {
     "fontSize": "18px"
 }
 
+const getId = (() => {
+    let count = 0;
+    const countUp = () => {
+        count++;
+        return count;
+    };
+    return countUp;
+})();
+
 const menu = ['all', 'working', 'done']
 
 const Todo = () => {
-    const [items, setItems] = useState([
-        { id: 1, text: 'list 1', done: false },
-        { id: 2, text: 'list 2', done: false },
-        { id: 3, text: 'list 3', done: false },
-    ]);
+    const [items, setItems] = useState([]);
 
     const [filter, setFilter] = useState('all');
 
@@ -29,7 +34,7 @@ const Todo = () => {
     }
 
     const handleAdd = (text) => {
-        setItems([...items, { key: 5, text: text, done: false }]);
+        setItems([...items, { id: getId(), text: text, done: false }]);
     }
 
     return (
