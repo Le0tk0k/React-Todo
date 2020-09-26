@@ -7,14 +7,16 @@ const TodoItem = (props) => {
     };
 
     return (
-        <label className={props.item.done ? 'done' : ''}>
-            <input
-                type="checkbox"
-                checked={props.item.done}
-                onChange={handleChange}
-            />
-            {props.item.text}
-        </label>
+        <div>
+            <label className={props.item.done ? 'done' : ''}>
+                <input
+                    type="checkbox"
+                    checked={props.item.done}
+                    onChange={handleChange}
+                />
+                {props.item.text}
+            </label>
+        </div>
     )
 }
 

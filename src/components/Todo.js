@@ -35,6 +35,7 @@ const Todo = () => {
     return (
         <div>
             <Form onAdd={handleAdd} />
+            <div>
             {
                 menu.map((item) => (
                 <label key={item} style={radioStyle}>
@@ -48,6 +49,7 @@ const Todo = () => {
                 </label>
                 ))
             }
+            </div>
             {
                 items.filter((item) => (filter === 'all' || (filter === 'working' && !item.done) || (filter === 'done' && item.done)))
                     .map((item) => (
