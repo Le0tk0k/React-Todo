@@ -7,6 +7,7 @@ const TodoItem = (props) => {
     };
 
     return (
+        <div className="item">
             <label className={props.item.done ? 'done' : ''}>
                 <input
                     type="checkbox"
@@ -15,6 +16,7 @@ const TodoItem = (props) => {
                 />
                 {props.item.text}
             </label>
+        </div>
     )
 }
 

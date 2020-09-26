@@ -1,3 +1,13 @@
 .done {
     color: darkgray;
 }
+
+.item {
+    width: 380px;
+    font-size: 18px;
+    text-align: left;
+    padding: 6px;
+    margin: 10px auto 0;
+    border-radius: 6px;
+    background-color: #fff;
+}

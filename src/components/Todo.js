@@ -1,11 +1,7 @@
 import React, {useState} from "react";
 import TodoItem from "./TodoItem";
 import Form from "./Form";
-
-const radioStyle = {
-    "margin": "10px",
-    "fontSize": "18px"
-}
+import './style/todo.css';
 
 const getId = (() => {
     let count = 0;
@@ -25,7 +21,7 @@ const Todo = () => {
 
     const handleCheck = (checked) => {
         const newItems = items.map((item) => {
-            if(item.id === checked.id) {
+            if (item.id === checked.id) {
                 item.done = !item.done;
             }
             return item
@@ -34,36 +30,36 @@ const Todo = () => {
     }
 
     const handleAdd = (text) => {
-        setItems([...items, { id: getId(), text: text, done: false }]);
+        setItems([...items, {id: getId(), text: text, done: false}]);
     }
 
     return (
         <div>
-            <Form onAdd={handleAdd} />
+            <Form onAdd={handleAdd}/>
             <div>
-            {
-                menu.map((item) => (
-                <label key={item} style={radioStyle}>
-                    <input
-                        type="radio"
-                        value={item}
-                        onChange={() => setFilter(item)}
-                        checked={item === filter}
-                    />
-                    {item}
-                </label>
-                ))
-            }
+                {
+                    menu.map((item) => (
+                        <label key={item} className="filter">
+                            <input
+                                type="radio"
+                                value={item}
+                                onChange={() => setFilter(item)}
+                                checked={item === filter}
+                            />
+                            {item}
+                        </label>
+                    ))
+                }
             </div>
             {
                 items.filter((item) => (filter === 'all' || (filter === 'working' && !item.done) || (filter === 'done' && item.done)))
                     .map((item) => (
-                    <TodoItem
-                        key={item.id}
-                        item={item}
-                        onCheck={handleCheck}
-                    />
-                ))
+                        <TodoItem
+                            key={item.id}
+                            item={item}
+                            onCheck={handleCheck}
+                        />
+                    ))
             }
         </div>
     )

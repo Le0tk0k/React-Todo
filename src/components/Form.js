@@ -1,13 +1,5 @@
 import React, {useState} from 'react';
-
-const inputStyle = {
-  "width": "380px",
-  "fontSize": "18px",
-  "padding": "6px",
-  "borderWidth": "0",
-  "borderRadius": "6px",
-  "marginRight" :"12px"
-}
+import './style/form.css';
 
 const Form = (props) => {
   const [text, setText] = useState('');
@@ -24,8 +16,8 @@ const Form = (props) => {
   return (
     <div>
       <input
+          className="form"
           type="text"
-          style={inputStyle}
           placeholder="Enter to add"
           value={text}
           onChange={handleChange}
