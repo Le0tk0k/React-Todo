@@ -2,6 +2,7 @@
   width: 680px;
   height: 85vh;
   background-color: #dcdcdc;
+  color: #494949;
   text-align: center;
   margin: 15px auto 0;
   padding: 20px;
@@ -9,6 +10,5 @@
 }
 
 h1 {
-  color: #494949;
   font-size: 36px;
 }
